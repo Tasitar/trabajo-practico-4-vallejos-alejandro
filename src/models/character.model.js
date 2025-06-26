@@ -1,30 +1,30 @@
 import { DataTypes } from "sequelize"; //herramientas  de sequelize
-import Sequelize from "../config/database"; //trae los datos de database.js
+import SequelizeInstance from "../config/database.js"; //trae los datos de database.js
 
 export const Character = Sequelize.define(
     "character",
     {
             id:{
                 type: DataTypes.INTEGER,
-                primarykey:true,
-                allownull: false,
+                primaryKey:true,
+                allowNull: false,
                 autoIncrement: true,
         },
             name:{
                 type: DataTypes.STRING,
-                allownull: false
+                allowNull: false
         },
             ki:{
                 type: DataTypes.INTEGER,
-                allownull:false,
+                allowNull:false,
         },
             race:{
                 type: DataTypes.STRING,
-                allownull:false,
+                allowNull:false,
         },
             gender:{
                 type: DataTypes.STRING,
-                allownull: false,
+                allowNull: false,
         },
     }
 )

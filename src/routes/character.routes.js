@@ -1,5 +1,14 @@
 
 import { Router } from 'express'; //herramienta para crear mini aplicaciones / sub rutas
-const router = Router();
+import { 
+    getALLcharacters,
+    createCharacter, 
+} from "../controllers/character.controllers.js";
 
-export default router
+const router = Router()
+
+router.get('/', getALLcharacters)
+
+router.post('/',createCharacter)
+
+export default router;

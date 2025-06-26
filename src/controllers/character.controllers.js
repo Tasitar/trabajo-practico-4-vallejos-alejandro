@@ -1,4 +1,3 @@
-// src/controllers/character.controller.js
 
 import { Character } from "../models/character.model.js";
 

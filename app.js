@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import characterRoutes from './src/routes/character.routes.js'
 import sequelize from './src/config/database.js';
 
+app.use ('/api/characters', characterRoutes)
+
 // con esto se carga las variables de entorno
 dotenv.config();
 
@@ -22,6 +24,6 @@ try{
 
 
 const PORT = process.env.PORT || 3000; //la constante lee la variable port o pone por defecto el port 3000
-app.listeners(PORT, ()=> {
-    console.log ('el servidor esta corriendo en ${PORT}')
+app.listen(PORT, ()=> {
+    console.log (`el servidor esta corriendo en ${PORT}`)
 }) //esto escucha las peticiones que se hace en el puerto, de la Variable PORT o 3000
