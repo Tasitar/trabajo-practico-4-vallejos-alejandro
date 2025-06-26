@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import characterRoutes from ''
-import { Sequelize } from 'sequelize';
+import characterRoutes from './src/routes/character.routes.js'
+import sequelize from './src/config/database.js';
 
 // con esto se carga las variables de entorno
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/api/characters', characterRoutes);
 
 try{
-    await Sequelize.authenticate(); //esto sirve para intentar conectarse a la BD
+    await sequelize.authenticate(); //esto sirve para intentar conectarse a la BD
     console.log('se conecto a la base de datos ;)')  //mensaje cuando se conecta
 } catch (error) {
     console.error('error al conectarse a la base de datos >:v')// mensaje cuando no
