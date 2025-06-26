@@ -17,7 +17,7 @@ try{
     await sequelize.authenticate(); //esto sirve para intentar conectarse a la BD
     console.log('se conecto a la base de datos ;)')  //mensaje cuando se conecta
 } catch (error) {
-    console.error('error al conectarse a la base de datos >:v')// mensaje cuando no
+    console.error('error al conectarse a la base de datos >:v',error.message)// mensaje cuando no
 }
 
 
